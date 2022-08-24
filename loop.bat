@@ -4,5 +4,5 @@ tasklist | find /i "ngrok.exe" >Nul && goto check || echo "Unable to get NGROK t
 :check
 ping 127.0.0.1 > nul
 cls
-echo VPS Alive 6 Hours
+echo VPS Alive 1 Hours
 goto check
