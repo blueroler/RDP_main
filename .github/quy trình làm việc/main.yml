@@ -1,4 +1,4 @@
-name: WilliamNS
+name: RDP_main
 
 on: workflow_dispatch
 
