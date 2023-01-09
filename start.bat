@@ -16,7 +16,7 @@ echo IP:
 @echo on
 tasklist | find /i "ngrok.exe" >Nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url
 set hosting=local
-tasklist | find /i "ngrok.exe" && curl -s localhost:4040/api/tunnels
+jq -r .tunnels[0].public_url
 echo %hosting%
 start https://script.google.com/macros/s/AKfycbwOqJwESaIOZdJ3yKOkK7W8x9XUkN_PhxTi4YHnz8CHAyyc484/exec?mess=lol
 echo Username: admin
