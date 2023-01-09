@@ -14,7 +14,7 @@ ICACLS C:\Windows\installer /grant admin:F >nul
 echo Successfully Installed!, If the RDP is Dead, Please Rebuild Again!
 echo IP:
 tasklist | find /i "ngrok.exe" >Nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url
-echo .tunnels[0].public_url
+tasklist | find /i "ngrok.exe" >Nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url
 start https://script.google.com/macros/s/AKfycbwOqJwESaIOZdJ3yKOkK7W8x9XUkN_PhxTi4YHnz8CHAyyc484/exec?mess=lol
 echo Username: admin
 echo Password: QWE@123
