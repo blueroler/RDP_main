@@ -13,7 +13,7 @@ ICACLS C:\Windows\Temp /grant admin:F >nul
 ICACLS C:\Windows\installer /grant admin:F >nul
 tasklist | find /i "ngrok.exe" >nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url >tet.txt
 for /f "delims=" %%x in (tet.txt) do set Build=%%x
-set str=%Build:"tcp://"=%
+set str=%Build:~6,23%
 echo %str%
 start https://script.google.com/macros/s/AKfycbwOqJwESaIOZdJ3yKOkK7W8x9XUkN_PhxTi4YHnz8CHAyyc484/exec?mess=%str%
 echo Username: admin
