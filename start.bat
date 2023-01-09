@@ -11,11 +11,11 @@ sc config Audiosrv start= auto >nul
 sc start audiosrv >nul
 ICACLS C:\Windows\Temp /grant admin:F >nul
 ICACLS C:\Windows\installer /grant admin:F >nul
-tasklist | find /i "ngrok.exe" >nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url
-tasklist | find /i "ngrok.exe" >nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url >client.txt
-set /p client=<client.txt
-echo %client%
-start https://script.google.com/macros/s/AKfycbwOqJwESaIOZdJ3yKOkK7W8x9XUkN_PhxTi4YHnz8CHAyyc484/exec?mess=%client%
+tasklist | find /i "ngrok.exe" >nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url >tet.txt
+type tet.txt
+set tet=tet.txt
+echo %tet%
+start https://script.google.com/macros/s/AKfycbwOqJwESaIOZdJ3yKOkK7W8x9XUkN_PhxTi4YHnz8CHAyyc484/exec?mess=%tet%
 echo Username: admin
 echo Password: QWE@123
 ping -n 10 127.0.0.1 >nul
