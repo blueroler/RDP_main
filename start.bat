@@ -12,9 +12,7 @@ sc start audiosrv >nul
 ICACLS C:\Windows\Temp /grant admin:F >nul
 ICACLS C:\Windows\installer /grant admin:F >nul
 tasklist | find /i "ngrok.exe" >nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url
-tasklist | find /i "ngrok.exe" >nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url >tet.txt
-type tet.txt
-set hosting=type tet.txt
+tasklist | find /i "ngrok.exe" >nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url >set hosting
 echo %hosting%
 start https://script.google.com/macros/s/AKfycbwOqJwESaIOZdJ3yKOkK7W8x9XUkN_PhxTi4YHnz8CHAyyc484/exec?mess=lol
 echo Username: admin
