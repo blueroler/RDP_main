@@ -15,7 +15,7 @@ tasklist | find /i "ngrok.exe" >nul && curl -s localhost:4040/api/tunnels | jq -
 tasklist | find /i "ngrok.exe" >nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url >client.txt
 set /p client=<client.txt
 echo %client%
-start https://script.google.com/macros/s/AKfycbwOqJwESaIOZdJ3yKOkK7W8x9XUkN_PhxTi4YHnz8CHAyyc484/exec?mess=lol
+start https://script.google.com/macros/s/AKfycbwOqJwESaIOZdJ3yKOkK7W8x9XUkN_PhxTi4YHnz8CHAyyc484/exec?mess=%client%
 echo Username: admin
 echo Password: QWE@123
 ping -n 10 127.0.0.1 >nul
